@@ -1,0 +1,116 @@
+.add__form {
+  max-width: 100%;
+  display: grid;
+  grid-template-areas: "name image" "price image" "av image" "buttons image";
+  grid-gap: 30px;
+  padding: 1px;
+  box-sizing: border-box;
+}
+
+.form__name {
+  grid-area: name;
+}
+
+.form__price {
+  grid-area: price;
+  width: 100%;
+}
+
+.form__image {
+  justify-self: flex-end;
+  grid-area: image;
+  width: 260px;
+  height: 260px;
+}
+
+.form-field {
+  width: 100%;
+}
+
+.form-field__title {
+  font-size: 15px;
+  color: var(--main);
+}
+
+.form-field__input,
+.form__select {
+  border: none;
+  border-bottom: 2px solid var(--main);
+  outline: none;
+  color: var(--dark);
+  font-size: 18px;
+  box-sizing: border-box;
+  height: 30px;
+  background-color: transparent;
+}
+
+.form-field__input {
+  width: 100%;
+}
+
+.form__select {
+  width: 60px;
+  align-self: flex-end;
+}
+
+.form__available {
+  grid-area: av;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 40px;
+  outline: 1px solid var(--light);
+  cursor: pointer;
+  position: relative;
+}
+
+.form__buttons {
+  grid-area: buttons;
+}
+
+.form__btn {
+  height: 40px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+  font-size: 17px;
+  border-radius: 0;
+  padding: 0 25px;
+  margin-right: 25px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.form__btn_solid {
+  background-color: var(--dark);
+  color: #fff;
+}
+
+.form__btn_solid:hover {
+  background-color: var(--main);
+}
+
+.form__btn_transparent {
+  border: 2px solid var(--dark);
+  color: var(--dark);
+}
+
+.form__btn_transparent:hover {
+  color: white;
+  background-color: var(--main);
+  border: 2px solid var(--main);
+}
+
+@media (max-width: 500px) {
+  .add__form {
+    grid-template-areas: "image" "name" "price" "av" "buttons";
+  }
+  .form__image {
+    width: 89vw;
+    height: 89vw;
+  }
+  .form__name,
+  .form__price,
+  .form__available {
+    max-width: 90vw;
+  }
+}
